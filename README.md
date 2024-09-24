@@ -10,7 +10,7 @@ Consider a pair of sentences $<s_1, s_2>$,  like the ones in the following examp
 ```text
    (1) Il cielo è grigio oggi.
    
-   (2) \Faresti bene a prendere l'ombrello.
+   (2) Faresti bene a prendere l'ombrello.
 ```
 
 Consider a semantic relation $r$ holding between $s_1$ and $s_2$ (e.g., $s_1$ entails $s_2$, $s_1$ does not entail $s_2$, $s_1$ contradicts $s_2$). Let $E$ be the set of possible explanations for $r$. The task consists in 
@@ -33,7 +33,7 @@ A second LLM ($M_2$) is then provided with the generated explanations $E_{gen}$ 
 Explanation effectiveness is evaluated by analyzing how providing different explanations generated in Step 1 affect the model $M_2$ prediction in Step 2. In practice, this is done by calculating the accuracy of the predictions of $M_2$ given the explanations and compare them to the selected baselines. Implement
 
 ## Implementation and data
-We provide a step-by-step guide to reproduce and extend our experiments in an [interactive notebook](scripts/run_experiments.ipynb). The data produced are contained in the (script)[scripts] folder.
+We provide a step-by-step guide to reproduce and extend our experiments in an [interactive notebook](scripts/run_experiments.ipynb). The data produced are contained in the [scripts] folder.
 
 ## Baselines
 We conduct baseline experiments using Llama-3.1-8B-Instruct as M₁ with a custom implementation in HuggingFace, and Llama-3-8B as M₂, using the LLM-Evaluation-Harness library in a zero-shot setting.
@@ -50,19 +50,17 @@ We provide baselines for the following settings:
 All experiments have been carried out in a zero-shot setting using the following prompts.
 
 > **M1 - Generation**: `Your task is to provide an explanation for the label assigned for the entailment relationship between two sentences.  
-> Sentence 1: `text_t``
-> Sentence 2: `text_h`  
-> Entailment label: `label`.  
-> exp_type`
-> 
-> Variables are indicated in color. In our experiments, `exp_type` = "Explain why." and the variables are read from each example.
+> Sentence 1: **text_t**
+> Sentence 2: **text_h**
+> Entailment label: **label**.  
+> **exp_type**`
 
-> **M2 - Prediction**: `Sentence 1: text_t  
-> Sentence 2: text_h  
-> Hint: anon_explanation.  
+> **M2 - Prediction**: `Sentence 1: **text_t**  
+> Sentence 2: **text_h**  
+> Hint: **anon_explanation**.  
 > Entailment label:`
-> 
-> Variables are indicated in color. In our experiments, `anon_explanation` can be "Not given." (**no-exp**), = `text_h` (**dummy**), = `anon_human` (**human**), = `anon_llama3` (**llama-3**).
+
+Variables are indicated in **bold**. In prompt M1, `exp_type` = "Explain why." while the other variables are read from each example. In prompt M2, `anon_explanation` can be "Not given." (**no-exp**), = `text_h` (**dummy**), = `anon_human` (**human**), = `anon_llama3` (**llama-3**).
 
 ### Baseline Results
 

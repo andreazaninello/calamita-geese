@@ -6,16 +6,16 @@ GEESE (Generating and Evaluating Explanations for Semantic Entailment) is a pipe
 ## Task Description
 Consider a pair of sentences $<s_1, s_2>$,  like the ones in the following example:
 
-```latex
+
 \begin{quote}
 \label{quote:working-example}
    (1) \textit{Il cielo è grigio oggi.}
    
    (2) \textit{Faresti bene a prendere l'ombrello.}  
 \end{quote}
-```
 
-\noindent Consider a semantic relation $r$ holding between $s_1$ and $s_2$ (e.g., $s_1$ entails $s_2$, $s_1$ does not entail $s_2$, $s_1$ contradicts $s_2$). Let $E$ be the set of possible explanations for $r$. The task consists in 
+
+Consider a semantic relation $r$ holding between $s_1$ and $s_2$ (e.g., $s_1$ entails $s_2$, $s_1$ does not entail $s_2$, $s_1$ contradicts $s_2$). Let $E$ be the set of possible explanations for $r$. The task consists in 
 \begin{itemize}
     \item generating an explanation $e_r \in E$ for the semantic relationship $r$ for each $<s_1, s_2>$ in the dataset;
     \item predict the relation with and without the generated explanation $e_r$;

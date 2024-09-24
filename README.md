@@ -1,7 +1,6 @@
 # The GEESE Challenge for CALAMITA
-## Generating and Evaluating Explanations for Semantic Entailment
 
-GEESE (Generating and Evaluating Explanations for Semantic Entailment) is a pipeline to evaluate (generated explanations) for the task of Recognizing Textual Entailment (RTE) in Italian. The challenge focuses on evaluating the impact of generated explanations on the predictive performance of language models. Our methodology assesses the quality of generated explanations by measuring changes in prediction accuracy when explanations are provided.
+The **GEESE** challenge (**Generating and Evaluating Explanations for Semantic Entailment**) is a pipeline to evaluate (LLM generated) explanations for the task of Recognizing Textual Entailment (RTE) in Italian. The challenge focuses on evaluating the impact of generated explanations on the predictive performance of language models. Explanations are generated, post-processed, and used in a downstream prediction task, taking the accuracy change in prediction as a proxy for the quality of the generated explanations.
 
 ## Task Description
 Consider a pair of sentences $<s_1, s_2>$,  like the ones in the following example:

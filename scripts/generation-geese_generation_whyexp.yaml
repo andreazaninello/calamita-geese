@@ -1,0 +1,6 @@
+
+    include: geese_generation_template.yaml
+    tag: geese_generation_tasks
+    task: geese_generation_whyexp
+    doc_to_text: !function ./utils.generate_whyexp_explanation
+    

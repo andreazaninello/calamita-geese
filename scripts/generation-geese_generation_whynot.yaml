@@ -1,0 +1,6 @@
+
+    include: geese_generation_template.yaml
+    tag: geese_generation_tasks
+    task: geese_generation_whynot
+    doc_to_text: !function ./utils.generate_whynot_explanation
+    

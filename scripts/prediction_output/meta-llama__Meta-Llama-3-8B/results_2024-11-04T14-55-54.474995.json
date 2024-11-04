@@ -1,0 +1,374 @@
+{
+  "results": {
+    "geese_prediction_dummy": {
+      "alias": "geese_prediction_dummy",
+      "acc,none": 0.5833333333333334,
+      "acc_stderr,none": 0.10279899245732688
+    },
+    "geese_prediction_human": {
+      "alias": "geese_prediction_human",
+      "acc,none": 0.7083333333333334,
+      "acc_stderr,none": 0.09477598811252413
+    },
+    "geese_prediction_implicit": {
+      "alias": "geese_prediction_implicit",
+      "acc,none": 0.625,
+      "acc_stderr,none": 0.10094660663590604
+    },
+    "geese_prediction_noexp": {
+      "alias": "geese_prediction_noexp",
+      "acc,none": 0.375,
+      "acc_stderr,none": 0.10094660663590604
+    },
+    "geese_prediction_obvious": {
+      "alias": "geese_prediction_obvious",
+      "acc,none": 1.0,
+      "acc_stderr,none": 0.0
+    },
+    "geese_prediction_whyexp": {
+      "alias": "geese_prediction_whyexp",
+      "acc,none": 0.6666666666666666,
+      "acc_stderr,none": 0.09829463743659811
+    },
+    "geese_prediction_whynot": {
+      "alias": "geese_prediction_whynot",
+      "acc,none": 0.7083333333333334,
+      "acc_stderr,none": 0.09477598811252413
+    }
+  },
+  "group_subtasks": {
+    "geese_prediction_obvious": [],
+    "geese_prediction_implicit": [],
+    "geese_prediction_whynot": [],
+    "geese_prediction_whyexp": [],
+    "geese_prediction_human": [],
+    "geese_prediction_dummy": [],
+    "geese_prediction_noexp": []
+  },
+  "configs": {
+    "geese_prediction_dummy": {
+      "task": "geese_prediction_dummy",
+      "tag": "geese_prediction_tasks",
+      "dataset_path": "azaninello/explained-full-llama-3",
+      "dataset_name": "default",
+      "validation_split": "test",
+      "test_split": "test",
+      "doc_to_text": "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality). Sentence 1:{{text_t}} Sentence 2: {{text_h}} Hint: {{text_h}}. Entailment label:",
+      "doc_to_target": "label",
+      "doc_to_choice": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "geese_prediction_human": {
+      "task": "geese_prediction_human",
+      "tag": "geese_prediction_tasks",
+      "dataset_path": "azaninello/explained-full-llama-3",
+      "dataset_name": "default",
+      "validation_split": "test",
+      "test_split": "test",
+      "doc_to_text": "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality). Sentence 1:{{text_t}} Sentence 2: {{text_h}} Hint: {{anon_human}}. Entailment label:",
+      "doc_to_target": "label",
+      "doc_to_choice": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "geese_prediction_implicit": {
+      "task": "geese_prediction_implicit",
+      "tag": "geese_prediction_tasks",
+      "dataset_path": "azaninello/explained-full-llama-3",
+      "dataset_name": "default",
+      "validation_split": "test",
+      "test_split": "test",
+      "doc_to_text": "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality). Sentence 1:{{text_t}} Sentence 2: {{text_h}} Hint: {{anon_implicit}}. Entailment label:",
+      "doc_to_target": "label",
+      "doc_to_choice": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "geese_prediction_noexp": {
+      "task": "geese_prediction_noexp",
+      "tag": "geese_prediction_tasks",
+      "dataset_path": "azaninello/explained-full-llama-3",
+      "dataset_name": "default",
+      "validation_split": "test",
+      "test_split": "test",
+      "doc_to_text": "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality). Sentence 1:{{text_t}} Sentence 2: {{text_h}} Hint: Not given. Entailment label:",
+      "doc_to_target": "label",
+      "doc_to_choice": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "geese_prediction_obvious": {
+      "task": "geese_prediction_obvious",
+      "tag": "geese_prediction_tasks",
+      "dataset_path": "azaninello/explained-full-llama-3",
+      "dataset_name": "default",
+      "validation_split": "test",
+      "test_split": "test",
+      "doc_to_text": "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality). Sentence 1:{{text_t}} Sentence 2: {{text_h}} Hint: {{label}}. Entailment label:",
+      "doc_to_target": "label",
+      "doc_to_choice": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "geese_prediction_whyexp": {
+      "task": "geese_prediction_whyexp",
+      "tag": "geese_prediction_tasks",
+      "dataset_path": "azaninello/explained-full-llama-3",
+      "dataset_name": "default",
+      "validation_split": "test",
+      "test_split": "test",
+      "doc_to_text": "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality). Sentence 1:{{text_t}} Sentence 2: {{text_h}} Hint: {{anon_whyexp}}. Entailment label:",
+      "doc_to_target": "label",
+      "doc_to_choice": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    },
+    "geese_prediction_whynot": {
+      "task": "geese_prediction_whynot",
+      "tag": "geese_prediction_tasks",
+      "dataset_path": "azaninello/explained-full-llama-3",
+      "dataset_name": "default",
+      "validation_split": "test",
+      "test_split": "test",
+      "doc_to_text": "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality). Sentence 1:{{text_t}} Sentence 2: {{text_h}} Hint: {{anon_whynot}}. Entailment label:",
+      "doc_to_target": "label",
+      "doc_to_choice": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": false
+    }
+  },
+  "versions": {
+    "geese_prediction_dummy": "Yaml",
+    "geese_prediction_human": "Yaml",
+    "geese_prediction_implicit": "Yaml",
+    "geese_prediction_noexp": "Yaml",
+    "geese_prediction_obvious": "Yaml",
+    "geese_prediction_whyexp": "Yaml",
+    "geese_prediction_whynot": "Yaml"
+  },
+  "n-shot": {
+    "geese_prediction_dummy": 0,
+    "geese_prediction_human": 0,
+    "geese_prediction_implicit": 0,
+    "geese_prediction_noexp": 0,
+    "geese_prediction_obvious": 0,
+    "geese_prediction_whyexp": 0,
+    "geese_prediction_whynot": 0
+  },
+  "higher_is_better": {
+    "geese_prediction_dummy": {
+      "acc": true
+    },
+    "geese_prediction_human": {
+      "acc": true
+    },
+    "geese_prediction_implicit": {
+      "acc": true
+    },
+    "geese_prediction_noexp": {
+      "acc": true
+    },
+    "geese_prediction_obvious": {
+      "acc": true
+    },
+    "geese_prediction_whyexp": {
+      "acc": true
+    },
+    "geese_prediction_whynot": {
+      "acc": true
+    }
+  },
+  "n-samples": {
+    "geese_prediction_noexp": {
+      "original": 800,
+      "effective": 24
+    },
+    "geese_prediction_dummy": {
+      "original": 800,
+      "effective": 24
+    },
+    "geese_prediction_human": {
+      "original": 800,
+      "effective": 24
+    },
+    "geese_prediction_whyexp": {
+      "original": 800,
+      "effective": 24
+    },
+    "geese_prediction_whynot": {
+      "original": 800,
+      "effective": 24
+    },
+    "geese_prediction_implicit": {
+      "original": 800,
+      "effective": 24
+    },
+    "geese_prediction_obvious": {
+      "original": 800,
+      "effective": 24
+    }
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=meta-llama/Meta-Llama-3-8B",
+    "model_num_parameters": 8030261248,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
+    "batch_size": 1,
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": 24.0,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "c389994",
+  "date": 1730728519.9881678,
+  "pretty_env_info": "PyTorch version: 2.4.1+cu121\nIs debug build: False\nCUDA used to build PyTorch: 12.1\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 22.04.4 LTS (x86_64)\nGCC version: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.35\n\nPython version: 3.12.5 | packaged by Anaconda, Inc. | (main, Sep 12 2024, 18:27:27) [GCC 11.2.0] (64-bit runtime)\nPython platform: Linux-5.15.0-102-generic-x86_64-with-glibc2.35\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: \nGPU 0: NVIDIA A40\nGPU 1: NVIDIA A40\nGPU 2: NVIDIA A40\nGPU 3: NVIDIA A40\nGPU 4: NVIDIA A40\nGPU 5: NVIDIA A40\nGPU 6: NVIDIA A40\nGPU 7: NVIDIA A40\n\nNvidia driver version: 535.171.04\ncuDNN version: Could not collect\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:                       x86_64\nCPU op-mode(s):                     32-bit, 64-bit\nAddress sizes:                      52 bits physical, 57 bits virtual\nByte Order:                         Little Endian\nCPU(s):                             80\nOn-line CPU(s) list:                0-79\nVendor ID:                          GenuineIntel\nModel name:                         Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz\nCPU family:                         6\nModel:                              106\nThread(s) per core:                 2\nCore(s) per socket:                 20\nSocket(s):                          2\nStepping:                           6\nCPU max MHz:                        3400.0000\nCPU min MHz:                        800.0000\nBogoMIPS:                           4600.00\nFlags:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect wbnoinvd dtherm ida arat pln pts avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid fsrm md_clear pconfig flush_l1d arch_capabilities\nVirtualization:                     VT-x\nL1d cache:                          1.9 MiB (40 instances)\nL1i cache:                          1.3 MiB (40 instances)\nL2 cache:                           50 MiB (40 instances)\nL3 cache:                           60 MiB (2 instances)\nNUMA node(s):                       2\nNUMA node0 CPU(s):                  0-19,40-59\nNUMA node1 CPU(s):                  20-39,60-79\nVulnerability Gather data sampling: Mitigation; Microcode\nVulnerability Itlb multihit:        Not affected\nVulnerability L1tf:                 Not affected\nVulnerability Mds:                  Not affected\nVulnerability Meltdown:             Not affected\nVulnerability Mmio stale data:      Mitigation; Clear CPU buffers; SMT vulnerable\nVulnerability Retbleed:             Not affected\nVulnerability Spec rstack overflow: Not affected\nVulnerability Spec store bypass:    Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:           Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:           Mitigation; Enhanced IBRS, IBPB conditional, RSB filling, PBRSB-eIBRS SW sequence\nVulnerability Srbds:                Not affected\nVulnerability Tsx async abort:      Not affected\n\nVersions of relevant libraries:\n[pip3] mypy==1.13.0\n[pip3] mypy-extensions==1.0.0\n[pip3] numpy==2.1.1\n[pip3] torch==2.4.1\n[pip3] triton==3.0.0\n[conda] numpy                     2.1.1                    pypi_0    pypi\n[conda] torch                     2.4.1                    pypi_0    pypi\n[conda] triton                    3.0.0                    pypi_0    pypi",
+  "transformers_version": "4.44.2",
+  "upper_git_hash": "c38999484c2841f6bc4c6d17482cf1c5e8ccbf4b",
+  "tokenizer_pad_token": [
+    "<|end_of_text|>",
+    "128001"
+  ],
+  "tokenizer_eos_token": [
+    "<|end_of_text|>",
+    "128001"
+  ],
+  "tokenizer_bos_token": [
+    "<|begin_of_text|>",
+    "128000"
+  ],
+  "eot_token_id": 128001,
+  "max_length": 8192,
+  "task_hashes": {},
+  "model_source": "hf",
+  "model_name": "meta-llama/Meta-Llama-3-8B",
+  "model_name_sanitized": "meta-llama__Meta-Llama-3-8B",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 8314517.984149099,
+  "end_time": 8314557.112216598,
+  "total_evaluation_time_seconds": "39.128067499026656"
+}

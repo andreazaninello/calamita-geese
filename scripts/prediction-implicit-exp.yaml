@@ -1,0 +1,9 @@
+
+include: prediction-no-exp.yaml
+tag: geese_prediction_tasks
+task: geese_prediction_implicit
+doc_to_text: "Your task is to predict the entailment label between two sentences, selecting one label among YES (entailment), NO (contradiction), or UNKNOWN (neutrality).
+Sentence 1:{{text_t}}
+Sentence 2: {{text_h}}
+Hint: {{anon_implicit}}.
+Entailment label:"
